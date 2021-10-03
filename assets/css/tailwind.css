@@ -1,0 +1,1337 @@
+@tailwind base;
+
+
+@tailwind components;
+    /* color */
+    .box-color
+    {
+        @apply box-content h-6 rounded-md mr-4;
+    }
+
+    /* notif dot */
+    .notif-dot-success
+    {
+        @apply absolute ml-8 mb-8 p-1 rounded-full bg-success;
+    }
+    .notif-dot-danger
+    {
+        @apply absolute ml-8 mb-8 p-1 rounded-full bg-danger;
+    }
+    .notif-dot-warning
+    {
+        @apply absolute ml-8 mb-8 p-1 rounded-full bg-warning;
+    }
+    .notif-dot-info
+    {
+        @apply absolute ml-8 mb-8 p-1 rounded-full bg-info;
+    }
+
+    /* card */
+    .flex-card
+    {
+        @apply flex justify-start items-center py-2 mx-2;
+    }
+    .card-icon
+    {
+        @apply flex justify-center items-center box-content h-10 w-10 bg-quaternary shadow-neumorphism rounded-xl;
+    }
+    .card
+    {
+        @apply box-content shadow-neumorphism p-4 m-2 rounded-xl;
+    }
+    .card-full
+    {
+        @apply box-content shadow-neumorphism p-0 m-2 rounded-xl;
+    }
+    .card-full-text
+    {
+        @apply px-4 pb-4;
+    }
+    .h-card
+    {
+        @apply my-4 flex flex-col;
+    } 
+    .card-title
+    {
+        @apply my-4 text-base font-montserrat font-bold;
+    }
+    .card-desc
+    {
+        @apply tracking-widest text-xs ;
+    }
+
+    /* list group */
+    .list-group
+    {
+        @apply flex flex-wrap box-content mx-4 my-2 border-collapse border;
+    }
+    .list-group-item
+    {
+        @apply px-4 py-2 border w-full flex items-center;
+    }
+    .link-primary
+    {
+        @apply hover:text-quaternary hover:bg-primary focus:text-quaternary focus:bg-primary;
+    }
+    .link-secondary
+    {
+        @apply hover:text-quaternary hover:bg-secondary focus:text-quaternary focus:bg-secondary;
+    }
+    .link-tertiary
+    {
+        @apply hover:text-quaternary hover:bg-tertiary focus:text-quaternary focus:bg-tertiary;
+    }
+    .link-danger
+    {
+        @apply hover:text-quaternary hover:bg-danger focus:text-quaternary focus:bg-danger;
+    }
+    .link-success
+    {
+        @apply hover:text-quaternary hover:bg-success focus:text-quaternary focus:bg-success;
+    }
+    .link-warning
+    {
+        @apply hover:text-tertiary hover:bg-warning focus:text-tertiary focus:bg-warning;
+    }
+    .link-info
+    {
+        @apply hover:text-quaternary hover:bg-info focus:text-quaternary focus:bg-info;
+    }
+    .active-primary
+    {
+        @apply bg-primary text-quaternary;
+    }
+    .active-secondary
+    {
+        @apply bg-secondary text-quaternary;
+    }
+    .active-tertiary
+    {
+        @apply bg-tertiary text-quaternary;
+    }
+    .active-danger
+    {
+        @apply bg-danger text-quaternary;
+    }
+    .active-success
+    {
+        @apply bg-success text-quaternary;
+    }
+    .active-warning
+    {
+        @apply bg-warning text-quaternary;
+    }
+    .active-info
+    {
+        @apply bg-info text-quaternary;
+    }
+
+    
+    /* alert */
+    .box-alert
+    {
+        @apply flex box-content my-1 h-10 px-4 items-center justify-between;
+    }
+
+
+    /* badge */
+    .box-badge
+    {
+        @apply flex items-center box-content px-4 py-2 text-xs font-semibold;
+    }
+    .badge-number
+    {
+        @apply flex items-center justify-center ml-2 h-7 w-7 rounded-full text-sm;
+    }
+    .icon-badge
+    {
+        @apply flex items-center justify-center ml-2;
+    }
+
+
+    /* btn */
+    .active
+    {
+        @apply bg-primary text-quaternary rounded-full;
+    }
+    .btn-icon
+    {
+        @apply justify-center items-center box-content h-10 w-10 mx-2 bg-quaternary shadow-neumorphism rounded-xl;
+    } 
+    .btn-i
+    {
+        @apply flex items-center justify-center ml-2;
+    }   
+    .btn-primary-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-primary border-2 text-quaternary hover:bg-quaternary hover:border-primary hover:text-primary focus:bg-quaternary focus:border-primary focus:text-primary tracking-widest rounded-md;
+    }
+    .btn-secondary-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-secondary border-2 text-quaternary hover:bg-quaternary hover:border-secondary hover:text-secondary focus:bg-quaternary focus:border-secondary focus:text-secondary tracking-widest rounded-md;
+    }
+    .btn-tertiary-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-tertiary border-2 text-quaternary hover:bg-quaternary hover:border-tertiary hover:text-tertiary focus:bg-quaternary focus:border-tertiary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-danger-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-danger border-2 text-quaternary hover:bg-quaternary hover:border-danger hover:text-danger focus:bg-quaternary focus:border-danger focus:text-danger tracking-widest rounded-md;
+    }
+    .btn-success-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-success border-2 text-quaternary hover:bg-quaternary hover:border-success hover:text-success focus:bg-quaternary focus:border-success focus:text-success tracking-widest rounded-md;
+    }
+    .btn-warning-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-warning border-2 text-tertiary hover:bg-quaternary hover:border-warning hover:text-warning focus:bg-quaternary focus:border-warning focus:text-warning tracking-widest rounded-md;
+    }
+    .btn-info-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-info border-2 text-quaternary hover:bg-quaternary hover:border-info hover:text-info focus:bg-quaternary focus:border-info focus:text-info tracking-widest rounded-md;
+    }
+    .btn-primary-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-primary-light border-2 text-quaternary hover:bg-quaternary hover:border-primary-light hover:text-primary-light focus:bg-quaternary focus:border-primary-light focus:text-primary-light tracking-widest rounded-md;
+    }
+    .btn-secondary-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-secondary-light border-2 text-quaternary hover:bg-quaternary hover:border-secondary-light hover:text-secondary-light focus:bg-quaternary focus:border-secondary-light focus:text-secondary-light tracking-widest rounded-md;
+    }
+    .btn-tertiary-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-tertiary-light border-2 text-quaternary hover:bg-quaternary hover:border-tertiary-light hover:text-tertiary-light focus:bg-quaternary focus:border-tertiary-light focus:text-tertiary-light tracking-widest rounded-md;
+    }
+    .btn-danger-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-danger-light border-2 text-tertiary hover:bg-quaternary hover:border-danger-light hover:text-danger focus:bg-quaternary focus:border-danger focus:text-danger-light tracking-widest rounded-md;
+    }
+    .btn-success-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-success-light border-2 text-tertiary hover:bg-quaternary hover:border-success-light hover:text-success focus:bg-quaternary focus:border-success focus:text-success-light tracking-widest rounded-md;
+    }
+    .btn-warning-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-warning-light border-2 text-tertiary hover:bg-quaternary hover:border-warning-light hover:text-warning focus:bg-quaternary focus:border-warning focus:text-warning tracking-widest rounded-md;
+    }
+    .btn-info-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-info-light border-2 text-tertiary hover:bg-quaternary hover:border-info-light hover:text-info focus:bg-quaternary focus:border-info-light focus:text-info tracking-widest rounded-md;
+    }
+    .btn-primary-outline-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-primary text-primary hover:bg-primary hover:border-quaternary hover:text-quaternary focus:bg-primary focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-secondary-outline-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-secondary text-secondary hover:bg-secondary hover:border-quaternary hover:text-quaternary focus:bg-secondary focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-tertiary-outline-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-tertiary text-tertiary hover:bg-tertiary hover:border-quaternary hover:text-quaternary focus:bg-tertiary focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-danger-outline-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-danger text-danger hover:bg-danger hover:border-quaternary hover:text-quaternary focus:bg-danger focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-success-outline-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-success text-success hover:bg-success hover:border-quaternary hover:text-quaternary focus:bg-success focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-warning-outline-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-warning text-warning hover:bg-warning hover:border-quaternary hover:text-tertiary focus:bg-warning focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-info-outline-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-info text-info hover:bg-info hover:border-quaternary hover:text-quaternary focus:bg-info focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-primary-outline-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-primary-light text-primary-light hover:bg-primary-light hover:border-quaternary hover:text-quaternary focus:bg-primary-light focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-secondary-outline-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-secondary-light text-secondary-light hover:bg-secondary-light hover:border-quaternary hover:text-quaternary focus:bg-secondary-light focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-tertiary-outline-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-tertiary-light text-tertiary-light hover:bg-tertiary-light hover:border-quaternary hover:text-quaternary focus:bg-tertiary-light focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-danger-outline-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-danger-light text-danger hover:bg-danger-light hover:border-quaternary hover:text-tertiary focus:bg-danger-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-success-outline-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-success-light text-success hover:bg-success-light hover:border-quaternary hover:text-tertiary focus:bg-success-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-warning-outline-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-warning-light text-warning hover:bg-warning-light hover:border-quaternary hover:text-tertiary focus:bg-warning-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-info-outline-light-sm
+    {
+        @apply flex items-center justify-center box-content py-1 px-2 transition delay-75 duration-150 text-xs bg-quaternary border-2 border-info-light text-info hover:bg-info-light hover:border-quaternary hover:text-tertiary focus:bg-info-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-primary-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-primary border-2 text-quaternary hover:bg-quaternary hover:border-primary hover:text-primary focus:bg-quaternary focus:border-primary focus:text-primary tracking-widest rounded-md;
+    }
+    .btn-secondary-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-secondary border-2 text-quaternary hover:bg-quaternary hover:border-secondary hover:text-secondary focus:bg-quaternary focus:border-secondary focus:text-secondary tracking-widest rounded-md;
+    }
+    .btn-tertiary-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-tertiary border-2 text-quaternary hover:bg-quaternary hover:border-tertiary hover:text-tertiary focus:bg-quaternary focus:border-tertiary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-danger-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-danger border-2 text-quaternary hover:bg-quaternary hover:border-danger hover:text-danger focus:bg-quaternary focus:border-danger focus:text-danger tracking-widest rounded-md;
+    }
+    .btn-success-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-success border-2 text-quaternary hover:bg-quaternary hover:border-success hover:text-success focus:bg-quaternary focus:border-success focus:text-success tracking-widest rounded-md;
+    }
+    .btn-warning-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-warning border-2 text-tertiary hover:bg-quaternary hover:border-warning hover:text-warning focus:bg-quaternary focus:border-warning focus:text-warning tracking-widest rounded-md;
+    }
+    .btn-info-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-info border-2 text-quaternary hover:bg-quaternary hover:border-info hover:text-info focus:bg-quaternary focus:border-info focus:text-info tracking-widest rounded-md;
+    }
+    .btn-primary-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-primary-light border-2 text-quaternary hover:bg-quaternary hover:border-primary-light hover:text-primary-light focus:bg-quaternary focus:border-primary-light focus:text-primary-light tracking-widest rounded-md;
+    }
+    .btn-secondary-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-secondary-light border-2 text-quaternary hover:bg-quaternary hover:border-secondary-light hover:text-secondary-light focus:bg-quaternary focus:border-secondary-light focus:text-secondary-light tracking-widest rounded-md;
+    }
+    .btn-tertiary-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-tertiary-light border-2 text-quaternary hover:bg-quaternary hover:border-tertiary-light hover:text-tertiary-light focus:bg-quaternary focus:border-tertiary-light focus:text-tertiary-light tracking-widest rounded-md;
+    }
+    .btn-danger-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-danger-light border-2 text-tertiary hover:bg-quaternary hover:border-danger-light hover:text-danger focus:bg-quaternary focus:border-danger focus:text-danger-light tracking-widest rounded-md;
+    }
+    .btn-success-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-success-light border-2 text-tertiary hover:bg-quaternary hover:border-success-light hover:text-success focus:bg-quaternary focus:border-success focus:text-success-light tracking-widest rounded-md;
+    }
+    .btn-warning-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-warning-light border-2 text-tertiary hover:bg-quaternary hover:border-warning-light hover:text-warning focus:bg-quaternary focus:border-warning focus:text-warning tracking-widest rounded-md;
+    }
+    .btn-info-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-info-light border-2 text-tertiary hover:bg-quaternary hover:border-info-light hover:text-info focus:bg-quaternary focus:border-info-light focus:text-info tracking-widest rounded-md;
+    }
+    .btn-primary-outline-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-primary text-primary hover:bg-primary hover:border-quaternary hover:text-quaternary focus:bg-primary focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-secondary-outline-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-secondary text-secondary hover:bg-secondary hover:border-quaternary hover:text-quaternary focus:bg-secondary focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-tertiary-outline-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-tertiary text-tertiary hover:bg-tertiary hover:border-quaternary hover:text-quaternary focus:bg-tertiary focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-danger-outline-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-danger text-danger hover:bg-danger hover:border-quaternary hover:text-quaternary focus:bg-danger focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-success-outline-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-success text-success hover:bg-success hover:border-quaternary hover:text-quaternary focus:bg-success focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-warning-outline-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-warning text-warning hover:bg-warning hover:border-quaternary hover:text-tertiary focus:bg-warning focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-info-outline-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-info text-info hover:bg-info hover:border-quaternary hover:text-quaternary focus:bg-info focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-primary-outline-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-primary-light text-primary-light hover:bg-primary-light hover:border-quaternary hover:text-quaternary focus:bg-primary-light focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-secondary-outline-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-secondary-light text-secondary-light hover:bg-secondary-light hover:border-quaternary hover:text-quaternary focus:bg-secondary-light focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-tertiary-outline-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-tertiary-light text-tertiary-light hover:bg-tertiary-light hover:border-quaternary hover:text-quaternary focus:bg-tertiary-light focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-danger-outline-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-danger-light text-danger hover:bg-danger-light hover:border-quaternary hover:text-tertiary focus:bg-danger-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-success-outline-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-success-light text-success hover:bg-success-light hover:border-quaternary hover:text-tertiary focus:bg-success-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-warning-outline-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-warning-light text-warning hover:bg-warning-light hover:border-quaternary hover:text-tertiary focus:bg-warning-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-info-outline-light-md
+    {
+        @apply flex items-center justify-center box-content py-2 px-4 transition delay-75 duration-150 bg-quaternary border-2 border-info-light text-info hover:bg-info-light hover:border-quaternary hover:text-tertiary focus:bg-info-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-primary-lg
+    {
+        @apply flex items-center justify-center box-content py-2 px-6 transition delay-75 duration-150 text-sm bg-primary border-2 text-quaternary hover:bg-quaternary hover:border-primary hover:text-primary focus:bg-quaternary focus:border-primary focus:text-primary tracking-widest rounded-md;
+    }
+    .btn-secondary-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-secondary border-2 text-quaternary hover:bg-quaternary hover:border-secondary hover:text-secondary focus:bg-quaternary focus:border-secondary focus:text-secondary tracking-widest rounded-md;
+    }
+    .btn-tertiary-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-tertiary border-2 text-quaternary hover:bg-quaternary hover:border-tertiary hover:text-tertiary focus:bg-quaternary focus:border-tertiary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-danger-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-danger border-2 text-quaternary hover:bg-quaternary hover:border-danger hover:text-danger focus:bg-quaternary focus:border-danger focus:text-danger tracking-widest rounded-md;
+    }
+    .btn-success-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-success border-2 text-quaternary hover:bg-quaternary hover:border-success hover:text-success focus:bg-quaternary focus:border-success focus:text-success tracking-widest rounded-md;
+    }
+    .btn-warning-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-warning border-2 text-tertiary hover:bg-quaternary hover:border-warning hover:text-warning focus:bg-quaternary focus:border-warning focus:text-warning tracking-widest rounded-md;
+    }
+    .btn-info-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-info border-2 text-quaternary hover:bg-quaternary hover:border-info hover:text-info focus:bg-quaternary focus:border-info focus:text-info tracking-widest rounded-md;
+    }
+    .btn-primary-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-primary-light border-2 text-quaternary hover:bg-quaternary hover:border-primary-light hover:text-primary-light focus:bg-quaternary focus:border-primary-light focus:text-primary-light tracking-widest rounded-md;
+    }
+    .btn-secondary-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-secondary-light border-2 text-quaternary hover:bg-quaternary hover:border-secondary-light hover:text-secondary-light focus:bg-quaternary focus:border-secondary-light focus:text-secondary-light tracking-widest rounded-md;
+    }
+    .btn-tertiary-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-tertiary-light border-2 text-quaternary hover:bg-quaternary hover:border-tertiary-light hover:text-tertiary-light focus:bg-quaternary focus:border-tertiary-light focus:text-tertiary-light tracking-widest rounded-md;
+    }
+    .btn-danger-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-danger-light border-2 text-tertiary hover:bg-quaternary hover:border-danger-light hover:text-danger focus:bg-quaternary focus:border-danger focus:text-danger-light tracking-widest rounded-md;
+    }
+    .btn-success-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-success-light border-2 text-tertiary hover:bg-quaternary hover:border-success-light hover:text-success focus:bg-quaternary focus:border-success focus:text-success-light tracking-widest rounded-md;
+    }
+    .btn-warning-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-warning-light border-2 text-tertiary hover:bg-quaternary hover:border-warning-light hover:text-warning focus:bg-quaternary focus:border-warning focus:text-warning tracking-widest rounded-md;
+    }
+    .btn-info-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-info-light border-2 text-tertiary hover:bg-quaternary hover:border-info-light hover:text-info focus:bg-quaternary focus:border-info-light focus:text-info tracking-widest rounded-md;
+    }
+    .btn-primary-outline-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-primary text-primary hover:bg-primary hover:border-quaternary hover:text-quaternary focus:bg-primary focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-secondary-outline-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-secondary text-secondary hover:bg-secondary hover:border-quaternary hover:text-quaternary focus:bg-secondary focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-tertiary-outline-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-tertiary text-tertiary hover:bg-tertiary hover:border-quaternary hover:text-quaternary focus:bg-tertiary focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-danger-outline-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-danger text-danger hover:bg-danger hover:border-quaternary hover:text-quaternary focus:bg-danger focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-success-outline-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-success text-success hover:bg-success hover:border-quaternary hover:text-quaternary focus:bg-success focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-warning-outline-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-warning text-warning hover:bg-warning hover:border-quaternary hover:text-tertiary focus:bg-warning focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-info-outline-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-info text-info hover:bg-info hover:border-quaternary hover:text-quaternary focus:bg-info focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-primary-outline-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-primary-light text-primary-light hover:bg-primary-light hover:border-quaternary hover:text-quaternary focus:bg-primary-light focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-secondary-outline-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-secondary-light text-secondary-light hover:bg-secondary-light hover:border-quaternary hover:text-quaternary focus:bg-secondary-light focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-tertiary-outline-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-tertiary-light text-tertiary-light hover:bg-tertiary-light hover:border-quaternary hover:text-quaternary focus:bg-tertiary-light focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .btn-danger-outline-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-danger-light text-danger hover:bg-danger-light hover:border-quaternary hover:text-tertiary focus:bg-danger-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-success-outline-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-success-light text-success hover:bg-success-light hover:border-quaternary hover:text-tertiary focus:bg-success-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-warning-outline-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-warning-light text-warning hover:bg-warning-light hover:border-quaternary hover:text-tertiary focus:bg-warning-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+    .btn-info-outline-light-lg
+    {
+        @apply flex items-center justify-center box-content py-3 px-5 transition delay-75 duration-150 text-sm bg-quaternary border-2 border-info-light text-info hover:bg-info-light hover:border-quaternary hover:text-tertiary focus:bg-info-light focus:border-quaternary focus:text-tertiary tracking-widest rounded-md;
+    }
+
+    
+    /* pagination */
+    .pagination
+    {
+        @apply flex flex-row text-sm font-semibold gap-1;
+    }
+    .pagination-sm
+    {
+        @apply py-1 px-2;
+    }
+    .pagination-md
+    {
+        @apply py-2 px-4;
+    }
+    .pagination-lg
+    {
+        @apply py-3 px-6;
+    }
+    .pagination-list
+    {
+        @apply flex items-center justify-center box-content bg-quaternary border-2 border-primary text-primary hover:bg-primary hover:border-quaternary hover:text-quaternary focus:bg-primary focus:border-quaternary focus:text-quaternary tracking-widest rounded-md;
+    }
+    .pagination-list-active
+    {
+        @apply flex items-center justify-center box-content bg-primary text-quaternary tracking-widest rounded-md;
+    }
+    .pagination-list-disabled
+    {
+        @apply flex items-center justify-center box-content bg-primary-light text-quaternary tracking-widest rounded-md pointer-events-none;
+    }
+
+
+    /* search */
+    .search
+    {
+        @apply flex justify-between bg-quaternary shadow-neumorphism ml-4 rounded-full;
+    }
+    .search-btn
+    {
+        @apply bg-quaternary text-primary px-4 rounded-full;
+    }
+    .search-input
+    {
+        @apply text-tertiary bg-quaternary rounded-full text-base py-2 pl-6 lg:w-60 xl:w-auto focus:outline-none;
+    }
+
+
+    /* divider */
+    .divider
+    {
+        @apply border-gray-300;
+    }
+
+
+    /*  sidebar */
+    .sidebar
+    {
+        @apply absolute text-xs h-auto bg-quaternary pr-4 text-secondary-light lg:relative w-full sm:w-full lg:w-80 xl:w-80 lg:top-0 lg:px-0 z-40;
+    }
+    .sidebar-header
+    {
+        @apply flex py-4 ml-4 justify-between;
+    }
+    .sidebar-wrap
+    {
+        @apply flex justify-between overflow-y-scroll ml-4 h-full lg:h-96 2xl:h-full ;
+    }
+    .sidebar-body
+    {
+        @apply flex justify-start mt-4;
+    }
+    .sidebar-item
+    {
+        @apply flex justify-start items-center my-1 ;
+    }
+    .sidebar-item-link
+    {
+        @apply flex items-center py-3 px-6;
+    }
+    .sidebar-list
+    {
+        @apply flex justify-start items-start my-1 flex-col;
+    }
+    .sidebar-list-link
+    {
+        @apply flex justify-start items-center py-3 px-6;
+    }
+    .sidebar-list-dropdown
+    {
+        @apply flex justify-start flex-col ml-12 list-disc list-inside;
+    }
+    .sidebar-item-text
+    {
+        @apply tracking-widest font-medium px-2;
+    }
+    .sidebar-footer
+    {
+        @apply tracking-widest font-sans my-4 ml-4 z-40;
+    }
+    .list
+    {
+        @apply my-2 list-none;
+    }
+    .list-active
+    {
+        @apply my-2 list-outside text-primary font-semibold;
+    }
+
+
+    /* preloader */
+    .preloader
+    {
+        @apply flex fixed justify-center flex-col items-center w-full h-full top-0 left-0 bg-quaternary opacity-100 z-50;
+    }
+    .preloader-border
+    {
+        @apply animate-ping flex justify-center items-center border-2 border-primary w-10 h-10 rounded-full;
+    }
+    .preloader-dot
+    {
+        @apply animate-ping border-2 bg-primary w-5 h-5 rounded-full;
+    }
+    .preloader-text
+    {
+        @apply mt-10 tracking-widest font-semibold text-primary;
+    }
+
+
+    /* body */
+    .full-body
+    {
+        @apply flex bg-quaternary text-sm font-poppins text-tertiary  h-full w-full tracking-widest static;
+    }
+    .main   
+    {
+        @apply mx-4 w-full lg:w-full xl:w-full z-0;
+    }
+    .section
+    {
+        @apply overflow-x-scroll h-full pb-20 pt-4 px-4;
+    }
+
+
+    /* modal */
+    .modal
+    {
+        @apply absolute z-50 w-full h-full flex justify-center bg-secondary bg-opacity-90;
+    }
+    .modal-header
+    {
+        @apply flex justify-between items-center pb-4;
+    }
+    .modal-body
+    {
+        @apply overflow-y-scroll font-poppins py-4;
+    }
+    .modal-footer
+    {
+        @apply flex justify-end pt-4 gap-4 tracking-widest;
+    }
+    .alert-modal
+    {
+        @apply rounded-lg bg-quaternary font-montserrat w-60 sm:w-1/3 p-4 flex-wrap text-center;
+    }
+    .alert-modal-header
+    {
+        @apply flex items-center pb-4 justify-center;
+    }
+    .alert-modal-body
+    {
+        @apply font-poppins py-4;
+    }
+    .alert-modal-footer
+    {
+        @apply flex justify-center pt-4 m-4 tracking-widest;
+    }
+    .modal-card-small
+    {
+        @apply  rounded-lg bg-quaternary font-montserrat w-60 sm:w-1/3 p-6 flex-wrap;
+    }
+    .modal-card-medium
+    {
+        @apply rounded-lg bg-quaternary font-montserrat w-2/3 p-6 flex-wrap;
+    }
+    .modal-card-large
+    {
+        @apply  rounded-lg bg-quaternary font-montserrat w-full p-6 flex-wrap;
+    }
+    .small-modal
+    {
+        @apply h-16;
+    }
+    .medium-modal
+    {
+        @apply h-56;
+    }
+    .large-modal
+    {
+        @apply h-96;
+    }
+
+    /* input */
+    .input-r-sm
+    {
+        @apply bg-purple-100 py-2 px-6 rounded-md border-2 border-purple-300 tracking-widest w-full disabled:bg-purple-200;
+    }
+    .input-r-md
+    {
+        @apply bg-purple-100 py-2 px-6 rounded-lg border-2 border-purple-300 tracking-widest w-full disabled:bg-purple-200;
+    }
+    .input-r-lg
+    {
+        @apply bg-purple-100 py-2 px-6 rounded-xl border-2 border-purple-300 tracking-widest w-full disabled:bg-purple-200;
+    }
+    .input-r-full
+    {
+        @apply bg-purple-100 py-2 px-6 rounded-full border-2 border-purple-300 tracking-widest w-full disabled:bg-purple-200;
+    }
+    .focus-primary
+    {
+        @apply focus:outline-none focus:border-primary;
+    }
+    .focus-secondary
+    {
+        @apply focus:outline-none focus:border-secondary;
+    }
+    .focus-tertiary
+    {
+        @apply focus:outline-none focus:border-tertiary;
+    }
+    .focus-success
+    {
+        @apply focus:outline-none focus:border-success;
+    }
+    .focus-danger
+    {
+        @apply focus:outline-none focus:border-danger;
+    }
+    .focus-warning
+    {
+        @apply focus:outline-none focus:border-warning;
+    }
+    .focus-info
+    {
+        @apply focus:outline-none focus:border-info;
+    }
+    .helper-primary
+    {
+        @apply text-xs font-medium text-primary;
+    }
+    .helper-secondary
+    {
+        @apply text-xs font-medium text-secondary;
+    }
+    .helper-tertiary
+    {
+        @apply text-xs font-medium text-tertiary;
+    }
+    .helper-quaternary
+    {
+        @apply text-xs font-medium text-quaternary;
+    }
+    .helper-danger
+    {
+        @apply text-xs font-medium text-danger;
+    }
+    .helper-success
+    {
+        @apply text-xs font-medium text-success;
+    }
+    .helper-warning
+    {
+        @apply text-xs font-medium text-warning;
+    }
+    .helper-info
+    {
+        @apply text-xs font-medium text-info;
+    }
+    .cb-primary
+    {
+        @apply text-primary bg-quaternary border-2 border-primary rounded-sm disabled:opacity-50;
+    }
+    .cb-secondary
+    {
+        @apply text-secondary bg-quaternary border-2 border-secondary rounded-sm disabled:opacity-50;
+    }
+    .cb-tertiary
+    {
+        @apply text-tertiary bg-quaternary border-2 border-tertiary rounded-sm disabled:opacity-50;
+    }
+    .cb-danger
+    {
+        @apply text-danger bg-quaternary border-2 border-danger rounded-sm disabled:opacity-50;
+    }
+    .cb-success
+    {
+        @apply text-success bg-quaternary border-2 border-success rounded-sm disabled:opacity-50;
+    }
+    .cb-warning
+    {
+        @apply text-warning bg-quaternary border-2 border-warning rounded-sm disabled:opacity-50;
+    }
+    .cb-info
+    {
+        @apply text-info bg-quaternary border-2 border-info rounded-sm disabled:opacity-50;
+    }
+    .cb-sm  
+    {
+        @apply h-4 w-4;
+    }
+    .cb-md  
+    {
+        @apply h-6 w-6;
+    }
+    .cb-lg  
+    {
+        @apply h-8 w-8;
+    }
+    .rb-primary
+    {
+        @apply text-primary bg-quaternary border-2 border-primary rounded-full disabled:opacity-50;
+    }
+    .rb-secondary
+    {
+        @apply text-secondary bg-quaternary border-2 border-secondary rounded-full disabled:opacity-50;
+    }
+    .rb-tertiary
+    {
+        @apply text-tertiary bg-quaternary border-2 border-tertiary rounded-full disabled:opacity-50;
+    }
+    .rb-danger
+    {
+        @apply text-danger bg-quaternary border-2 border-danger rounded-full disabled:opacity-50;
+    }
+    .rb-success
+    {
+        @apply text-success bg-quaternary border-2 border-success rounded-full disabled:opacity-50;
+    }
+    .rb-warning
+    {
+        @apply text-warning bg-quaternary border-2 border-warning rounded-full disabled:opacity-50;
+    }
+    .rb-info
+    {
+        @apply text-info bg-quaternary border-2 border-info rounded-full disabled:opacity-50;
+    }
+    .rb-sm  
+    {
+        @apply h-4 w-4;
+    }
+    .rb-md  
+    {
+        @apply h-6 w-6;
+    }
+    .rb-lg  
+    {
+        @apply h-8 w-8;
+    }
+    .input-group
+    {
+        @apply flex items-center;
+    }
+    .input-group-icon
+    {
+        @apply text-quaternary mx-4;
+    }
+    .input-group-item
+    {
+        @apply bg-purple-100 py-2 px-6 border-2 border-purple-300 tracking-widest w-full disabled:bg-purple-200;
+    }
+    .r-sm
+    {
+        @apply rounded-md;
+    }
+    .r-l-sm
+    {
+        @apply rounded-r-md;
+    }
+    .r-r-sm
+    {
+        @apply rounded-l-md;
+    }
+    .r-md
+    {
+        @apply rounded-lg;
+    }
+    .r-l-md
+    {
+        @apply rounded-r-lg;
+    }
+    .r-lrmd
+    {
+        @apply rounded-l-lg;
+    }
+    .r-full
+    {
+        @apply rounded-full;
+    }
+    .r-l-full
+    {
+        @apply rounded-r-full;
+    }
+    .r-r-full
+    {
+        @apply rounded-l-full;
+    }
+
+    /* table */
+    .table-responsive-default
+    {
+        @apply overflow-x-scroll;
+    }
+    .table-responsive-default table
+    {
+        @apply table-auto w-full;
+    }
+    .table-responsive-default thead
+    {
+        @apply text-sm font-semibold tracking-widest;
+    }
+    .table-responsive-default tbody,tfoot
+    {
+        @apply text-sm font-medium;
+    }
+    .table-responsive-default th
+    {
+        @apply border border-primary px-4 py-2 ;
+    }
+    .table-responsive-default td
+    {
+        @apply border border-primary px-4 py-2 ;
+    }
+    .table-responsive-default tbody > tr
+    {
+        @apply hover:bg-purple-200 hover:text-tertiary;
+    }
+    .table-responsive-primary
+    {
+        @apply overflow-x-scroll;
+    }
+    .table-responsive-primary table
+    {
+        @apply table-auto w-full;
+    }
+    .table-responsive-primary thead
+    {
+        @apply text-sm font-semibold tracking-widest;
+    }
+    .table-responsive-primary tbody,tfoot
+    {
+        @apply text-sm font-medium;
+    }
+    .table-responsive-primary th
+    {
+        @apply border border-primary px-4 py-2 ;
+    }
+    .table-responsive-primary td
+    {
+        @apply border border-primary px-4 py-2 ;
+    }
+    .table-responsive-primary tbody > tr
+    {
+        @apply hover:bg-purple-500 hover:text-quaternary;
+    }
+    .table-responsive-primary thead
+    {
+        @apply bg-primary text-quaternary;
+    }
+    .table-responsive-primary tfoot
+    {
+        @apply bg-primary text-quaternary;
+    }
+    .table-responsive-primary tr:nth-child(even)
+    {
+        @apply bg-purple-300 ;
+    }
+
+    .table-responsive-secondary
+    {
+        @apply overflow-x-scroll;
+    }
+    .table-responsive-secondary table
+    {
+        @apply table-auto w-full;
+    }
+    .table-responsive-secondary thead
+    {
+        @apply text-sm font-semibold tracking-widest;
+    }
+    .table-responsive-secondary tbody,tfoot
+    {
+        @apply text-sm font-medium;
+    }
+    .table-responsive-secondary th
+    {
+        @apply border border-secondary px-4 py-2 ;
+    }
+    .table-responsive-secondary td
+    {
+        @apply border border-secondary px-4 py-2 ;
+    }
+    .table-responsive-secondary tbody > tr
+    {
+        @apply hover:bg-gray-500 hover:text-quaternary;
+    }
+    .table-responsive-secondary thead
+    {
+        @apply bg-secondary text-quaternary;
+    }
+    .table-responsive-secondary tfoot
+    {
+        @apply bg-secondary text-quaternary;
+    }
+    .table-responsive-secondary tr:nth-child(even)
+    {
+        @apply bg-gray-300 ;
+    }
+
+    .table-responsive-tertiary
+    {
+        @apply overflow-x-scroll;
+    }
+    .table-responsive-tertiary table
+    {
+        @apply table-auto w-full;
+    }
+    .table-responsive-tertiary thead
+    {
+        @apply text-sm font-semibold tracking-widest;
+    }
+    .table-responsive-tertiary tbody,tfoot
+    {
+        @apply text-sm font-medium;
+    }
+    .table-responsive-tertiary th
+    {
+        @apply border border-tertiary px-4 py-2 ;
+    }
+    .table-responsive-tertiary td
+    {
+        @apply border border-tertiary px-4 py-2 ;
+    }
+    .table-responsive-tertiary tbody > tr
+    {
+        @apply hover:bg-indigo-500 hover:text-quaternary;
+    }
+    .table-responsive-tertiary thead
+    {
+        @apply bg-tertiary text-quaternary;
+    }
+    .table-responsive-tertiary tfoot
+    {
+        @apply bg-tertiary text-quaternary;
+    }
+    .table-responsive-tertiary tr:nth-child(even)
+    {
+        @apply bg-indigo-300 ;
+    }
+
+    .table-responsive-danger
+    {
+        @apply overflow-x-scroll;
+    }
+    .table-responsive-danger table
+    {
+        @apply table-auto w-full;
+    }
+    .table-responsive-danger thead
+    {
+        @apply text-sm font-semibold tracking-widest;
+    }
+    .table-responsive-danger tbody,tfoot
+    {
+        @apply text-sm font-medium;
+    }
+    .table-responsive-danger th
+    {
+        @apply border border-danger px-4 py-2 ;
+    }
+    .table-responsive-danger td
+    {
+        @apply border border-danger px-4 py-2 ;
+    }
+    .table-responsive-danger tbody > tr
+    {
+        @apply hover:bg-red-400 hover:text-quaternary;
+    }
+    .table-responsive-danger thead
+    {
+        @apply bg-danger text-quaternary;
+    }
+    .table-responsive-danger tfoot
+    {
+        @apply bg-danger text-quaternary;
+    }
+    .table-responsive-danger tr:nth-child(even)
+    {
+        @apply bg-red-300 ;
+    }
+
+    .table-responsive-success
+    {
+        @apply overflow-x-scroll;
+    }
+    .table-responsive-success table
+    {
+        @apply table-auto w-full;
+    }
+    .table-responsive-success thead
+    {
+        @apply text-sm font-semibold tracking-widest;
+    }
+    .table-responsive-success tbody,tfoot
+    {
+        @apply text-sm font-medium;
+    }
+    .table-responsive-success th
+    {
+        @apply border border-success px-4 py-2 ;
+    }
+    .table-responsive-success td
+    {
+        @apply border border-success px-4 py-2 ;
+    }
+    .table-responsive-success tbody > tr
+    {
+        @apply hover:bg-green-400 hover:text-quaternary;
+    }
+    .table-responsive-success thead
+    {
+        @apply bg-success text-quaternary;
+    }
+    .table-responsive-success tfoot
+    {
+        @apply bg-success text-quaternary;
+    }
+    .table-responsive-success tr:nth-child(even)
+    {
+        @apply bg-green-300 ;
+    }
+
+    .table-responsive-warning
+    {
+        @apply overflow-x-scroll;
+    }
+    .table-responsive-warning table
+    {
+        @apply table-auto w-full;
+    }
+    .table-responsive-warning thead
+    {
+        @apply text-sm font-semibold tracking-widest;
+    }
+    .table-responsive-warning tbody,tfoot
+    {
+        @apply text-sm font-medium;
+    }
+    .table-responsive-warning th
+    {
+        @apply border border-warning px-4 py-2 ;
+    }
+    .table-responsive-warning td
+    {
+        @apply border border-warning px-4 py-2 ;
+    }
+    .table-responsive-warning tbody > tr
+    {
+        @apply hover:bg-yellow-400 hover:text-quaternary;
+    }
+    .table-responsive-warning thead
+    {
+        @apply bg-warning text-quaternary;
+    }
+    .table-responsive-warning tfoot
+    {
+        @apply bg-warning text-quaternary;
+    }
+    .table-responsive-warning tr:nth-child(even)
+    {
+        @apply bg-yellow-300 ;
+    }
+
+    .table-responsive-info
+    {
+        @apply overflow-x-scroll;
+    }
+    .table-responsive-info table
+    {
+        @apply table-auto w-full;
+    }
+    .table-responsive-info thead
+    {
+        @apply text-sm font-semibold tracking-widest;
+    }
+    .table-responsive-info tbody,tfoot
+    {
+        @apply text-sm font-medium;
+    }
+    .table-responsive-info th
+    {
+        @apply border border-info px-4 py-2 ;
+    }
+    .table-responsive-info td
+    {
+        @apply border border-info px-4 py-2 ;
+    }
+    .table-responsive-info tbody > tr
+    {
+        @apply hover:bg-blue-400 hover:text-quaternary;
+    }
+    .table-responsive-info thead
+    {
+        @apply bg-info text-quaternary;
+    }
+    .table-responsive-info tfoot
+    {
+        @apply bg-info text-quaternary;
+    }
+    .table-responsive-info tr:nth-child(even)
+    {
+        @apply bg-blue-300 ;
+    }
+
+
+    /* widget */
+    .widget-simple
+    {
+        @apply flex items-center box-content rounded-lg p-4;
+    }
+    .widget-simple-icon
+    {
+        @apply w-4/12 flex justify-center items-center p-2 mr-4;
+    }
+    .widget-simple-text
+    {
+        @apply flex flex-col items-end w-8/12;
+    }
+    .widget-simple-text h1
+    {
+        @apply font-bold;
+    }
+    .widget-simple-text span
+    {
+        @apply text-2xl font-black;
+    }
+
+    .widget-simple-card
+    {
+        @apply flex items-center box-content rounded-lg p-4;
+    }
+    .widget-simple-card-icon
+    {
+        @apply w-4/12 flex justify-center items-center p-2 mr-4 rounded-lg;
+    }
+    .widget-simple-card-text
+    {
+        @apply flex flex-col items-end w-8/12;
+    }
+    .widget-simple-card-text h1
+    {
+        @apply font-bold;
+    }
+    .widget-simple-card-text span
+    {
+        @apply text-2xl font-black;
+    }
+
+    .widget-border
+    {
+        @apply flex items-center box-content rounded-lg p-4 border-4;
+    }
+    .widget-border-icon
+    {
+        @apply w-4/12 flex justify-center items-center p-2 mr-4;
+    }
+    .widget-border-text
+    {
+        @apply flex flex-col items-end w-8/12;
+    }
+    .widget-border-text h1
+    {
+        @apply font-bold;
+    }
+    .widget-border-text span
+    {
+        @apply text-2xl font-black;
+    }
+
+    .widget-border-card
+    {
+        @apply flex items-center box-content rounded-lg p-4 border-4;
+    }
+    .widget-border-card-icon
+    {
+        @apply w-4/12 flex justify-center items-center p-2 mr-4 card;
+    }
+    .widget-border-card-text
+    {
+        @apply flex flex-col items-end w-8/12;
+    }
+    .widget-border-card-text h1
+    {
+        @apply font-bold;
+    }
+    .widget-border-card-text span
+    {
+        @apply text-2xl font-black;
+    }
+
+    /* auth */
+    .body-auth
+    {
+        @apply bg-quaternary text-sm font-poppins text-tertiary;
+    }
+    .section-auth
+    {
+        @apply py-8 px-4 lg:py-10 lg:px-20;
+    }
+    .wrap-content
+    {
+        @apply flex flex-col lg:flex-row justify-items-center items-center gap-8;
+    }
+    .content-illustration
+    {
+        @apply lg:w-6/12 xl:w-8/12 flex justify-center items-center p-10 rounded-lg;
+    }
+    .content-input
+    {
+        @apply lg:w-6/12 xl:w-4/12 card p-10 flex justify-center items-center flex-col gap-4;
+    }
+    .title-content-input
+    {
+        @apply flex justify-center items-center text-primary flex-col mb-10 gap-2 font-montserrat;
+    }
+
+@tailwind utilities;
