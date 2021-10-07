@@ -99,4 +99,23 @@ class Welcome extends CI_Controller
 		$this->load->view('profil');
 		$this->load->view('template/bawah');
 	}
+
+	public function bot()
+	{
+		$undangan = $this->Undangan_model->getAllUndangan();
+		$tgl = $undangan[0]['tgl_pelaksana'];
+		$sekarang = date("Y-m-d");
+		if ($tgl == $sekarang) {
+			// echo "sama";
+			$token = "2034678400:AAHbegJHNtivzW1-ZnfLJCOZUKpUj11FJAg"; // token bot
+			$data = array(
+				'text' => $undangan[0]['perihal'],
+				'chat_id' => '429602844,'  //contoh bot, group id -442697126
+			);
+
+			file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($data));
+		} else {
+			echo "tidak ada";
+		}
+	}
 }

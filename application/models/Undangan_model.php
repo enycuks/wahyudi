@@ -23,6 +23,7 @@ class Undangan_model extends CI_model
             "perihal" => $this->input->post('perihal', true),
             "tgl_pelaksana" => $this->input->post('tgl_pelaksa', true),
             "delegasi" => $this->input->post('delegasi', true),
+            "jam" => $this->input->post('jam', true),
             "ket" => $this->input->post('ket', true)
         ];
 
