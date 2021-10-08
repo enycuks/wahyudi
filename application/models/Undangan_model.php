@@ -15,6 +15,17 @@ class Undangan_model extends CI_model
     {
         return $this->db->get('undangan')->result_array();
     }
+
+    public function getUndangan()
+    {
+        $sekarang = date("Y-m-d");
+        $this->db->select('*');
+        $this->db->from('undangan');
+        $this->db->where('undangan.tgl_pelaksana', $sekarang);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
+
     public function tambahUndangan()
     {
         $data = [

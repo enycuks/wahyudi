@@ -102,20 +102,51 @@ class Welcome extends CI_Controller
 
 	public function bot()
 	{
-		$undangan = $this->Undangan_model->getAllUndangan();
-		$tgl = $undangan[0]['tgl_pelaksana'];
+		$undangan = $this->Undangan_model->getUndangan();
 		$sekarang = date("Y-m-d");
-		if ($tgl == $sekarang) {
-			// echo "sama";
-			$token = "2034678400:AAHbegJHNtivzW1-ZnfLJCOZUKpUj11FJAg"; // token bot
-			$data = array(
-				'text' => $undangan[0]['perihal'],
-				'chat_id' => '429602844,'  //contoh bot, group id -442697126
-			);
+		$jam1 = date("H:i:s");
+		$perihal = $undangan['perihal'];
 
+		$tgl = date('d-m-Y', strtotime($undangan['tgl_pelaksana']));
+		$jam = date('H:i', strtotime($undangan['jam']));
+
+		$sql = $this->db->query("SELECT * FROM undangan where tgl_pelaksana='$sekarang'");
+		$cek_nim = $sql->num_rows();
+		if ($cek_nim > 0) {
+			// echo $jam1;
+			$token = "2034678400:AAHbegJHNtivzW1-ZnfLJCOZUKpUj11FJAg"; // token bot
+			$data = [
+				'text' => "Ada Kegiatan $perihal Hari Ini Tanggal $tgl Pukul $jam",
+				'chat_id' => '429602844'  //contoh bot, group id -442697126
+			];
 			file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($data));
 		} else {
 			echo "tidak ada";
 		}
+	}
+
+	public function boti()
+	{
+		$undangan = $this->Undangan_model->getUndangan();
+
+		$jam1 = time();
+		$awal1  =  strtotime('now'); //waktu awal
+		$awal  =  strtotime($undangan['jam']); //waktu awal
+
+		$beda = $jam1 - $awal1;
+
+		//membagi detik menjadi jam
+		$jam    = floor($beda / (60 * 60));
+
+		//membagi sisa detik setelah dikurangi $jam menjadi menit
+		$menit    = $beda - $jam * (60 * 60);
+
+		echo $awal1;
+		echo "<br>";
+		echo $jam1;
+		echo "<br>";
+		echo $beda;
+		echo "<br>";
+		echo $menit;
 	}
 }
