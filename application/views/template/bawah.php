@@ -47,9 +47,9 @@
                     <div class="flex flex-col gap-2">
                         <div class="input-group r-sm bg-primary">
                             <div class="input-group-icon">
-                                <i class='bx bx-calendar bx-xs'></i>
+                                <i class='bx bx-images bx-xs'></i>
                             </div>
-                            <input type="date" name="tgl_pelaksa" class="input-group-item focus-primary r-l-sm" placeholder="Tanggal Pelaksanaan" required>
+                            <input type="datetime-local" name="jam" class="input-group-item focus-primary r-l-sm" placeholder="Jam Kegiatan" required>
                         </div>
                     </div>
                     <br>
@@ -77,15 +77,6 @@
                                 <i class='bx bx-images bx-xs'></i>
                             </div>
                             <input type="file" name="file" class="input-group-item focus-primary r-l-sm" placeholder="File" required>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="flex flex-col gap-2">
-                        <div class="input-group r-sm bg-primary">
-                            <div class="input-group-icon">
-                                <i class='bx bx-images bx-xs'></i>
-                            </div>
-                            <input type="time" name="jam" class="input-group-item focus-primary r-l-sm" placeholder="Jam Kegiatan" required>
                         </div>
                     </div>
 

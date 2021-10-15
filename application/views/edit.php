@@ -44,7 +44,7 @@
                             <div class="input-group-icon">
                                 <i class='bx bx-calendar bx-xs'></i>
                             </div>
-                            <input type="date" name="tgl_pelaksa" class="input-group-item focus-primary r-l-sm" placeholder="Tanggal Pelaksanaan" value="<?= $undangan['tgl_pelaksana'] ?>" required>
+                            <input type="text" name="jam" class="input-group-item focus-primary r-l-sm" placeholder="Tanggal Pelaksanaan" value="<?= $undangan['jam'] ?>" required>
                         </div>
                     </div>
                     <br>

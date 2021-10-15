@@ -26,14 +26,16 @@ CREATE TABLE IF NOT EXISTS `undangan` (
   `delegasi` varchar(255) NOT NULL,
   `ket` text NOT NULL,
   `file` varchar(255) NOT NULL,
+  `jam` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Dumping data for table undangan_wahyu.undangan: ~0 rows (approximately)
+-- Dumping data for table undangan_wahyu.undangan: ~3 rows (approximately)
 /*!40000 ALTER TABLE `undangan` DISABLE KEYS */;
-INSERT INTO `undangan` (`id`, `tgl_terima`, `instansi`, `perihal`, `tgl_pelaksana`, `delegasi`, `ket`, `file`) VALUES
-	(2, '2021-10-02', 'Instansi edit', 'Perihal edit', '2021-10-04', 'delegasi edit', 'keterangan edit', 'Analytics_Filtered_View_Halaman_20210817-20210916.pdf'),
-	(3, '2021-10-02', 'Instansi 3', 'Perihal 3', '2021-10-05', 'delegasi 3', 'keterangan 3', 'Data_Siswa.pdf');
+INSERT INTO `undangan` (`id`, `tgl_terima`, `instansi`, `perihal`, `tgl_pelaksana`, `delegasi`, `ket`, `file`, `jam`) VALUES
+	(3, '2021-10-07', 'IAIN Palangka Raya', 'Sosialisasi', '2021-10-14', 'Kepala', 'Hm inya', 'Kuitansi_033_Turnitin_IAIN_Palangka_Raya_TA_2021.pdf', '2021-10-13 21:30:00'),
+	(4, '2021-10-11', 'IAKN Palangka Raya', 'Rapat', '2021-10-13', 'Kepala Badab', 'jam nya ni bos', 'report2.pdf', '2021-10-13 21:25:00'),
+	(5, '2021-10-13', '5', '5', '2021-10-14', '5', '5', 'report3.pdf', '2021-10-14 21:29:00');
 /*!40000 ALTER TABLE `undangan` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

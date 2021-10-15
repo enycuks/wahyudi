@@ -11,9 +11,9 @@ class Welcome extends CI_Controller
 	public function index()
 	{
 		$this->load->view('login');
-		// $this->load->view('template/atas');
-		// $this->load->view('beranda');
-		// $this->load->view('template/bawah');
+		// 		$this->load->view('template/atas');
+		// 		$this->load->view('beranda');
+		// 		$this->load->view('template/bawah');
 	}
 
 	public function beranda()
@@ -102,29 +102,45 @@ class Welcome extends CI_Controller
 
 	public function bot()
 	{
-		$undangan = $this->Undangan_model->getUndangan();
-		$perihal = $undangan['perihal'];
+		$undangan = $this->Undangan_model->getAllUndangan();
 
-		$tgl = date('d-m-Y', strtotime($undangan['tgl_pelaksana']));
-		$pukul = date('H:i', strtotime($undangan['jam']));
-
-		$awal  = strtotime($undangan['jam']);
+		$tgl = date("Y-m-d");
 		$akhir = time(); // Waktu sekarang
-		$diff  = $awal - $akhir;
 
-		$jam   = floor($diff / (60 * 60));
-		$menit = $diff - ($jam * (60 * 60));
-		$selisih = floor($menit / 60);
-		if ($selisih == "30") {
-			$token = "2034678400:AAHbegJHNtivzW1-ZnfLJCOZUKpUj11FJAg"; // token bot
-			$data = [
-				'text' => "Ada Kegiatan/Rapat Perihal $perihal Hari Ini Tanggal $tgl Pukul $pukul",
-				// 'text' => "Ada Kegiatan",
-				'chat_id' => '429602844'  //contoh bot, group id -442697126
-			];
-			file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($data));
+		$sql = $this->db->query("SELECT tgl_pelaksana, jam FROM undangan where left(tgl_pelaksana,10)='$tgl'");
+		$cek_nim = $sql->num_rows();
+
+		echo $tgl;
+
+		if ($cek_nim > 0) {
+			echo "ada";
+			foreach ($undangan as $u) {
+				$awal  = strtotime($u['jam']);
+				$diff  = $awal - $akhir;
+
+				$jam   = floor($diff / (60 * 60));
+				$menit = $diff - ($jam * (60 * 60));
+				$selisih = floor($menit / 60);
+
+				$perihal = $u['perihal'];
+				$pukul = date('H:i', strtotime($u['jam']));
+				$tgl_kegiatan = date('Y-m-d', strtotime($u['tgl_pelaksana']));
+
+				$tglnya = date('d-m-Y', strtotime($u['tgl_pelaksana']));
+
+				if ($selisih == "5" && $tgl_kegiatan == $tgl && $jam == "0") {
+					echo $u['jam'];
+					$token = "2034678400:AAFItmM0KeZefWhbS9PT78a2T_ANxkixLfY"; // token bot
+					$data = [
+						'text' => "Ada Kegiatan/Rapat Perihal $perihal Hari Ini Tanggal $tglnya Pukul $pukul",
+						// 'text' => "Ada Kegiatan",
+						'chat_id' => '429602844'  //contoh bot, group id -442697126
+					];
+					file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($data));
+				}
+			}
 		} else {
-			echo "tidak ada";
+			echo "Tidak ada";
 		}
 	}
 }

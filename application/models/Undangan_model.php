@@ -18,7 +18,7 @@ class Undangan_model extends CI_model
 
     public function getUndangan()
     {
-        $sekarang = date("Y-m-d");
+        $sekarang = date('Y-m-d', strtotime("now"));
         $this->db->select('*');
         $this->db->from('undangan');
         $this->db->where('undangan.tgl_pelaksana', $sekarang);
@@ -32,7 +32,7 @@ class Undangan_model extends CI_model
             "tgl_terima" => $this->input->post('tgl_terima', true),
             "instansi" => $this->input->post('instansi', true),
             "perihal" => $this->input->post('perihal', true),
-            "tgl_pelaksana" => $this->input->post('tgl_pelaksa', true),
+            "tgl_pelaksana" => $this->input->post('jam', true),
             "delegasi" => $this->input->post('delegasi', true),
             "jam" => $this->input->post('jam', true),
             "ket" => $this->input->post('ket', true)
@@ -47,8 +47,9 @@ class Undangan_model extends CI_model
             "tgl_terima" => $this->input->post('tgl_terima', true),
             "instansi" => $this->input->post('instansi', true),
             "perihal" => $this->input->post('perihal', true),
-            "tgl_pelaksana" => $this->input->post('tgl_pelaksa', true),
+            "tgl_pelaksana" => $this->input->post('jam', true),
             "delegasi" => $this->input->post('delegasi', true),
+            "jam" => $this->input->post('jam', true),
             "ket" => $this->input->post('ket', true)
         ];
 
