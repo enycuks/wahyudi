@@ -134,7 +134,7 @@ class Welcome extends CI_Controller
 					$data = [
 						'text' => "Ada Kegiatan/Rapat Perihal $perihal Hari Ini Tanggal $tglnya Pukul $pukul",
 						// 'text' => "Ada Kegiatan",
-						'chat_id' => '429602844'  //contoh bot, group id -442697126
+						'chat_id' => '-683971240'  //contoh bot, group id -442697126
 					];
 					file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($data));
 				}
