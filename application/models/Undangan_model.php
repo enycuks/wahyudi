@@ -94,12 +94,31 @@ class Undangan_model extends CI_model
         return $this->db->get()->result(); // Ambil data pada tabel transaksi sesuai kondisi diatas
     }
 
-    public function getProfilById($id)
+    public function getProfil()
     {
-        $this->db->select('*');
-        $this->db->from('user');
-        $this->db->where('user.id', $id);
-        $query = $this->db->get();
-        return $query->row_array();
+        return $this->db->get('user')->result_array();;
+    }
+
+    public function editProfil()
+    {
+        $data = [
+            "username" => $this->input->post('username', true),
+            "password" => $this->input->post('password', true)
+        ];
+
+        $id = $this->input->post('id');
+
+        $this->db->where('id', $id);
+        $this->db->update('user', $data);
+    }
+
+    public function addUser()
+    {
+        $data = [
+            "username" => $this->input->post('username', true),
+            "password" => $this->input->post('password', true)
+        ];
+
+        $this->db->insert('user', $data);
     }
 }

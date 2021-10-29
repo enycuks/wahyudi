@@ -30,6 +30,7 @@ class Welcome extends CI_Controller
 			if ($password == $user['password']) { // Jika password yang diinput sama dengan password yang didatabase
 				$data = array(
 					'authenticated' => true, // Buat session authenticated dengan value true
+					'id' => $user['id'],
 					'username' => $user['username']
 				);
 
@@ -128,10 +129,40 @@ class Welcome extends CI_Controller
 	public function profil()
 	{
 		$id = $this->session->userdata('id');
-		$data['user'] = $this->Undangan_model->getProfilById($id);
+		$data['user'] = $this->Undangan_model->getProfil();
 		$this->load->view('template/atas');
 		$this->load->view('profil', $data);
 		$this->load->view('template/bawah');
+	}
+
+	public function profil_edit()
+	{
+		$id = $this->session->userdata('id');
+		$data['user'] = $this->Undangan_model->getProfil($id);
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('template/atas');
+			$this->load->view('editprofil', $data);
+			$this->load->view('template/bawah');
+		} else {
+			$this->Undangan_model->editProfil();
+			$this->session->set_flashdata('flash', 'Diubah');
+			redirect('welcome/profil');
+		}
+	}
+
+	public function user_add()
+	{
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('template/atas');
+			$this->load->view('addprofil');
+			$this->load->view('template/bawah');
+		} else {
+			$this->Undangan_model->addUser();
+			$this->session->set_flashdata('flash', 'Ditambah');
+			redirect('welcome/profil');
+		}
 	}
 
 	public function bot()
