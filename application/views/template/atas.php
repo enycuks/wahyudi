@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="<?= base_url() ?>assets/img/logo_virtue.png">
-    <title>Dashboard</title>
+    <link rel="icon" href="<?= base_url() ?>assets/img/simonpim.png">
+    <title>Simonpim</title>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Datatable -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/jquery-ui/jquery-ui.min.css'); ?>" /> <!-- Load file css jquery-ui -->
+    <script src="<?php echo base_url('assets/jquery.min.js'); ?>"></script> <!-- Load file jquery -->
 
 </head>
 
@@ -63,12 +65,12 @@
                             <span class="sidebar-item-text line-clamp-1">Dashboard</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
+                    <!-- <li class="sidebar-item">
                         <a href="Widget.html" class="sidebar-item-link">
                             <i class='bx bxs-widget bx-xs'></i>
                             <span class="sidebar-item-text line-clamp-1">Widget</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="sidebar-item">
                         <a href="<?= base_url() ?>welcome/profil" class="sidebar-item-link">
                             <i class='bx bx-cog bx-xs'></i>
@@ -140,27 +142,14 @@
             <div class="hidden lg:block w-9/12 ">
                 <div x-data="{ open: false }" class="flex justify-end py-4">
                     <div class="hidden lg:block">
-                        <p class="font-semibold py-2 px-4 tracking-wider">Hi, Muhammad</p>
+                        <p class="font-semibold py-2 px-4 tracking-wider"></p>
                     </div>
                     <button class="h-10 w-10 border-tertiary rounded-full" @click="open = ! open">
                         <img src="<?= base_url() ?>assets/img/faces/7.jpg" class="w-10 rounded-full" alt="">
                     </button>
                     <div class="absolute mt-16" x-show="open" @click.outside="open = false" x-transition>
                         <div class="w-60 h-w-60 p-4 bg-quaternary shadow-neumorphism text-tertiary rounded-lg">
-                            <a href="#" class="flex-card">
-                                <div class="card-icon">
-                                    <i class='bx bxs-user-circle bx-sm text-primary'></i>
-                                </div>
-                                <span class="px-2 font-medium">Profile</span>
-                            </a>
-                            <a href="#" class="flex-card">
-                                <div class="card-icon">
-                                    <i class='bx bx-slider-alt bx-sm text-primary'></i>
-                                </div>
-                                <span class="px-2 font-medium">Setting</span>
-                            </a>
-                            <hr class="border-gray-300">
-                            <a href="#" class="flex-card">
+                            <a href="<?= base_url() ?>welcome/logout" class="flex-card">
                                 <div class="card-icon">
                                     <i class='bx bx-exit bx-sm text-primary'></i>
                                 </div>

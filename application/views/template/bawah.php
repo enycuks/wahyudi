@@ -49,7 +49,7 @@
                             <div class="input-group-icon">
                                 <i class='bx bx-calendar bx-xs'></i>
                             </div>
-                            <input type="date" name="tgl_pelaksa" class="input-group-item focus-primary r-l-sm" placeholder="Tanggal Pelaksanaan" required>
+                            <input type="datetime-local" name="tgl_pelaksa" class="input-group-item focus-primary r-l-sm" placeholder="Tanggal Pelaksanaan" required>
                         </div>
                     </div>
                     <br>
@@ -80,15 +80,6 @@
                         </div>
                     </div>
                     <br>
-                    <div class="flex flex-col gap-2">
-                        <div class="input-group r-sm bg-primary">
-                            <div class="input-group-icon">
-                                <i class='bx bx-images bx-xs'></i>
-                            </div>
-                            <input type="time" name="jam" class="input-group-item focus-primary r-l-sm" placeholder="Jam Kegiatan" required>
-                        </div>
-                    </div>
-
                     <hr class="divider">
                     <div class="modal-footer font-semibold">
                         <button data-dismiss="modal">Close</button>
@@ -154,6 +145,32 @@
     $(document).ready(function() {
         $('#example').DataTable();
     });
+</script>
+
+<script src="<?php echo base_url('assets/jquery-ui/jquery-ui.min.js'); ?>"></script> <!-- Load file plugin js jquery-ui -->
+<script>
+    $(document).ready(function() { // Ketika halaman selesai di load
+        $('.input-tanggal').datepicker({
+            dateFormat: 'yy-mm-dd' // Set format tanggalnya jadi yyyy-mm-dd
+        });
+
+        $('#form-tanggal, #form-bulan, #form-tahun').hide(); // Sebagai default kita sembunyikan form filter tanggal, bulan & tahunnya
+
+        $('#filter').change(function() { // Ketika user memilih filter
+            if ($(this).val() == '1') { // Jika filter nya 1 (per tanggal)
+                $('#form-bulan, #form-tahun').hide(); // Sembunyikan form bulan dan tahun
+                $('#form-tanggal').show(); // Tampilkan form tanggal
+            } else if ($(this).val() == '2') { // Jika filter nya 2 (per bulan)
+                $('#form-tanggal').hide(); // Sembunyikan form tanggal
+                $('#form-bulan, #form-tahun').show(); // Tampilkan form bulan dan tahun
+            } else { // Jika filternya 3 (per tahun)
+                $('#form-tanggal, #form-bulan').hide(); // Sembunyikan form tanggal dan bulan
+                $('#form-tahun').show(); // Tampilkan form tahun
+            }
+
+            $('#form-tanggal input, #form-bulan select, #form-tahun select').val(''); // Clear data pada textbox tanggal, combobox bulan & tahun
+        })
+    })
 </script>
 </body>
 

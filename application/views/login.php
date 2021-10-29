@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <!-- Tailwind CSS -->
-    <link href="assets/dist/tailwind.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/dist/tailwind.css" rel="stylesheet">
     <!-- Icons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- Animations -->
@@ -32,8 +32,8 @@
     <!-- end preloader -->
 
     <section class="section-auth">
-        <div class="flex items-center justify-center lg:justify-start mb-4">
-            <div class="flex justify-center items-center box-content bg-quaternary shadow-neumorphism h-10 w-10 rounded-xl mr-4">
+        <div class="flex items-center justify-center lg:justify-start">
+            <div class="flex justify-center">
                 <!-- For character logo-->
                 <!-- <span class="text-primary font-black text-2xl">V</span>  -->
                 <!-- For image logo-->
@@ -42,15 +42,15 @@
             <!-- <span class="tracking-widest text-primary text-xl font-semibold lg:text-2xl"> -->
             <!-- SIMONPIM -->
             <!-- </span> -->
-            <img src="assets/img/simonpim.png" class="w-15 h-30" alt="logo">
-            <img src="assets/img/illustration/login.svg" width="450px" alt="login">
         </div>
         <div class="wrap-content">
             <div class="content-illustration">
-
+                <img src="assets/img/simonpim.png" class="w-15 h-30" alt="logo">
+                <img src="assets/img/illustration/login.svg" width="450px" alt="login">
             </div>
             <div class="content-input">
-                <form action="#">
+                <?= $this->session->flashdata('message'); ?>
+                <form action="<?= base_url(); ?>welcome/login" method="post">
                     <div class="title-content-input">
                         <h1 class="text-xl font-bold">Selamat Datang Simonpim</h1>
                         <h1 class="text font-bold">Halaman Login</h1>
@@ -61,7 +61,7 @@
                             <div class="input-group-icon">
                                 <i class='bx bx-mail-send bx-xs'></i>
                             </div>
-                            <input type="text" class="input-group-item focus-primary r-l-full" placeholder="Masukkan Username Anda" required>
+                            <input type="text" name="username" class="input-group-item focus-primary r-l-full" placeholder="Masukkan Username Anda" required>
                         </div>
                         <!-- <span class="helper-danger">text helper</span> -->
                     </div>
@@ -70,7 +70,7 @@
                             <div class="input-group-icon">
                                 <i class='bx bx-lock-alt bx-xs'></i>
                             </div>
-                            <input type="password" class="input-group-item focus-primary r-l-full" placeholder="Masukkan Password Anda" required>
+                            <input type="password" name="password" class="input-group-item focus-primary r-l-full" placeholder="Masukkan Password Anda" required>
                         </div>
                         <!-- <span class="helper-danger">text helper</span> -->
                     </div>
@@ -88,8 +88,8 @@
     <!-- Alpine JS -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- JQuery -->
-    <script src="assets/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="<?= base_url() ?>assets/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/main.js"></script>
 </body>
 
 </html>

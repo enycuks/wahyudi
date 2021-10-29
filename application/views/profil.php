@@ -20,8 +20,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>28/09/2021</td>
+                                <td><?= $user['username'] ?></td>
+                                <td><?= $user['password'] ?></td>
                                 <td>
                                     <a href=""><i class='bx bxs-edit bx-xs'></i></a>
                                     <a href=""><i class='bx bx-trash bx-xs'></i></a>

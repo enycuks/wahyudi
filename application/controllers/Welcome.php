@@ -16,6 +16,38 @@ class Welcome extends CI_Controller
 		// $this->load->view('template/bawah');
 	}
 
+	public function login()
+	{
+		$username = $this->input->post('username'); // Ambil isi dari inputan username pada form login
+		$password = $this->input->post('password'); // Ambil isi dari inputan password pada form login dan encrypt dengan md5
+
+		$user = $this->db->get_where('user', ['username' => $username])->row_array();
+
+		if (empty($user)) { // Jika hasilnya kosong / user tidak ditemukan
+			$this->session->set_flashdata('message', 'Username tidak ditemukan'); // Buat session flashdata
+			redirect('welcome'); // Redirect ke halaman login
+		} else {
+			if ($password == $user['password']) { // Jika password yang diinput sama dengan password yang didatabase
+				$data = array(
+					'authenticated' => true, // Buat session authenticated dengan value true
+					'username' => $user['username']
+				);
+
+				$this->session->set_userdata($data); // Buat session sesuai $session
+				redirect('welcome/beranda'); // Redirect ke halaman welcome
+			} else {
+				$this->session->set_flashdata('message', 'Usenmae & Password Tidak Sesuai'); // Buat session flashdata
+				redirect('welcome'); // Redirect ke halaman login
+			}
+		}
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy(); // Hapus semua session
+		redirect('welcome'); // Redirect ke halaman login
+	}
+
 	public function beranda()
 	{
 		$data['undangan'] = $this->Undangan_model->getAllUndangan();
@@ -95,8 +127,10 @@ class Welcome extends CI_Controller
 
 	public function profil()
 	{
+		$id = $this->session->userdata('id');
+		$data['user'] = $this->Undangan_model->getProfilById($id);
 		$this->load->view('template/atas');
-		$this->load->view('profil');
+		$this->load->view('profil', $data);
 		$this->load->view('template/bawah');
 	}
 
@@ -117,5 +151,85 @@ class Welcome extends CI_Controller
 		} else {
 			echo "tidak ada";
 		}
+	}
+
+	public function undangan()
+	{
+		if (isset($_GET['filter']) && !empty($_GET['filter'])) { // Cek apakah user telah memilih filter dan klik tombol tampilkan
+			$filter = $_GET['filter']; // Ambil data filder yang dipilih user
+			if ($filter == '1') { // Jika filter nya 1 (per tanggal)
+				$tgl = $_GET['tanggal'];
+
+				$ket = 'Data Undangan Tanggal ' . date('d-m-y', strtotime($tgl));
+				$url_cetak = 'welcome/cetak?filter=1&tanggal=' . $tgl;
+				$transaksi = $this->Undangan_model->view_by_date($tgl); // Panggil fungsi view_by_date yang ada di TransaksiModel
+			} else if ($filter == '2') { // Jika filter nya 2 (per bulan)
+				$bulan = $_GET['bulan'];
+				$tahun = $_GET['tahun'];
+				$nama_bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+
+				$ket = 'Data Undangan Bulan ' . $nama_bulan[$bulan] . ' ' . $tahun;
+				$url_cetak = 'welcome/cetak?filter=2&bulan=' . $bulan . '&tahun=' . $tahun;
+				$transaksi = $this->Undangan_model->view_by_month($bulan, $tahun); // Panggil fungsi view_by_month yang ada di TransaksiModel
+			} else { // Jika filter nya 3 (per tahun)
+				$tahun = $_GET['tahun'];
+
+				$ket = 'Data Undangan Tahun ' . $tahun;
+				$url_cetak = 'welcome/cetak?filter=3&tahun=' . $tahun;
+				$transaksi = $this->Undangan_model->view_by_year($tahun); // Panggil fungsi view_by_year yang ada di TransaksiModel
+			}
+		} else { // Jika user tidak mengklik tombol tampilkan
+			$ket = 'Semua Data Undangan';
+			$url_cetak = 'welcome/cetak';
+			$transaksi = $this->Undangan_model->view_all(); // Panggil fungsi view_all yang ada di TransaksiModel
+		}
+
+		$data['ket'] = $ket;
+		$data['url_cetak'] = base_url('index.php/' . $url_cetak);
+		$data['transaksi'] = $transaksi;
+		$data['option_tahun'] = $this->Undangan_model->option_tahun();
+		$this->load->view('template/atas');
+		$this->load->view('view', $data);
+		$this->load->view('template/bawah');
+	}
+
+	public function cetak()
+	{
+		if (isset($_GET['filter']) && !empty($_GET['filter'])) { // Cek apakah user telah memilih filter dan klik tombol tampilkan
+			$filter = $_GET['filter']; // Ambil data filder yang dipilih user
+			if ($filter == '1') { // Jika filter nya 1 (per tanggal)
+				$tgl = $_GET['tanggal'];
+
+				$ket = 'Data Undangan Tanggal ' . date('d-m-y', strtotime($tgl));
+				$transaksi = $this->Undangan_model->view_by_date($tgl); // Panggil fungsi view_by_date yang ada di TransaksiModel
+			} else if ($filter == '2') { // Jika filter nya 2 (per bulan)
+				$bulan = $_GET['bulan'];
+				$tahun = $_GET['tahun'];
+				$nama_bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+
+				$ket = 'Data Undangan Bulan ' . $nama_bulan[$bulan] . ' ' . $tahun;
+				$transaksi = $this->Undangan_model->view_by_month($bulan, $tahun); // Panggil fungsi view_by_month yang ada di TransaksiModel
+			} else { // Jika filter nya 3 (per tahun)
+				$tahun = $_GET['tahun'];
+
+				$ket = 'Data Undangan Tahun ' . $tahun;
+				$transaksi = $this->Undangan_model->view_by_year($tahun); // Panggil fungsi view_by_year yang ada di TransaksiModel
+			}
+		} else { // Jika user tidak mengklik tombol tampilkan
+			$ket = 'Semua Data Undangan';
+			$transaksi = $this->Undangan_model->view_all(); // Panggil fungsi view_all yang ada di TransaksiModel
+		}
+
+		$data['ket'] = $ket;
+		$data['transaksi'] = $transaksi;
+
+		ob_start();
+		$this->load->view('print', $data);
+		$html = ob_get_contents();
+		ob_end_clean();
+		require './assets/html2pdf/autoload.php'; // Load plugin html2pdfnya
+		$pdf = new Spipu\Html2Pdf\Html2Pdf('P', 'A4', 'en');  // Settingan PDFnya
+		$pdf->WriteHTML($html);
+		$pdf->Output('Data Transaksi.pdf', 'D');
 	}
 }
